@@ -10,3 +10,10 @@
 
 # Output of the go coverage tool, specifically when used with LiteIDE
 *.out
+
+# IDE generated files and folders
+.vscode
+.idea
+
+# OS generated files
+.DS_Store
