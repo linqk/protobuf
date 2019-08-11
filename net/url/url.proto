@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package linqk.protobuft;
+
+option go_package = "github.com/linqk/protobuft/net/url";
+
+message URL {
+    string scheme = 1;
+    string opaque = 2;    // encoded opaque data
+    UserInfo user = 3;    // username and password information
+    string host = 4;      // host or host:port
+    string path = 5;      // path (relative paths may omit leading slash)
+    string raw_path = 6;  // encoded path hint (see EscapedPath method)
+    bool force_query = 7; // append a query ('?') even if RawQuery is empty
+    string raw_query = 8; // encoded query values, without '?'
+    string fragment = 9;  // fragment for references, without '#'
+}
+
+message UserInfo {
+    string username = 1;
+    string password = 2;
+    bool password_set = 3;
+}
